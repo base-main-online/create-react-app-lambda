@@ -1,0 +1,67 @@
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+  
+
+}
+
+.leva-c-kWgxhW{
+
+  
+    opacity:1;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    bottom: 50%;
+    
+  
+
+}
+
+.leva-c-hwBXYF
+{
+
+    display: none;
+    opacity:1;
+    position: absolute;
+  
+
+}
+
+
+.leva-c-hBtFDW
+{
+
+    display: block;
+    opacity:1;
+    position: absolute;
+  
+  
+
+}
+
+
+.leva-c-kWgxhW-eXrJvq-flat-false {
+
+    box-shadow: none !important;
+}
+
+.leva-c-kWgxhW  {
+
+
+    --leva-colors-elevation2:  "white" !important;
+    --leva-colors-elevation1:  "white" !important
+}
+
+
+#leva__root{
+position: fixed !important;
+left: 50% !important;
+bottom: 50% !important;
+}

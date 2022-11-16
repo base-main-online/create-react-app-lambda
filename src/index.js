@@ -1,12 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './style.css'
+import ReactDOM from 'react-dom/client'
+import { Canvas } from '@react-three/fiber'
+import Experience from './Experience.js'
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+
+const root = ReactDOM.createRoot(document.querySelector('#root'))
+
+root.render(
+    <Canvas
+    shadows
+        camera={ {
+            fov: 45,
+            near: 0.1,
+            far: 200,
+            position: [ -6, 2, 1 ]
+        } }
+    >
+        <Experience />
+       
+    </Canvas>
+
+
+)

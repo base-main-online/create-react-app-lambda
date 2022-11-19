@@ -433,7 +433,7 @@ top: 2% !important;
     #ar-icon {
         position: absolute;
       width: 8%;
-      margin-left:-50%;
+      margin-left:-35%;
       margin-top: 1%;
 
       }
@@ -442,7 +442,7 @@ top: 2% !important;
         position: absolute;
       width: 6.5%;
       margin-left:15%;
-      margin-top: 5%;
+      margin-top: 6.5%;
 
       }
 
@@ -642,12 +642,13 @@ top: 2% !important;
                           
                           
                             .ar-open-android-div p {
-                              position:absolute;
+                                position:absolute;
                           
-                            margin-left: 10%;
-                            margin-top: 7%;
-                            font-size: 2.5vw;
-                            display: block;
+                                margin-left: 24%;
+                                margin-top: 7%;
+                                font-size: 2.5vw;
+                                display: block;
+                              
                           
                             }
 
@@ -688,7 +689,7 @@ top: 2% !important;
                             .ar-open-ios-div p {
                               position:absolute;
                           
-                            margin-left: 23%;
+                            margin-left: 24%;
                             margin-top: 7%;
                             font-size: 2.5vw;
                             display: block;

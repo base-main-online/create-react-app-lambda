@@ -47,27 +47,7 @@
         
     </script>
         
-        <script>
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-                if (userAgent.includes("HUAWEI")) {
-                    document.getElementById("ar-open-android-div").style.display="none";
-                    document.getElementById("ar-open-ios-div").style.display="none";
-
-                } else if (userAgent.includes("Android")) {
-                    document.getElementById("ar-open-android-div").style.display="block";
-                    document.getElementById("ar-open-ios-div").style.display="none";
-                
-                } else if (userAgent.includes("iPhone")) {
-                    document.getElementById("ar-open-android-div").style.display="none";
-                    document.getElementById("ar-open-ios-div").style.display="block";
-                
-                } else {
-              
-                    document.getElementById("ar-open-android-div").style.display="none";
-                    document.getElementById("ar-open-ios-div").style.display="none";
-                }
-            </script>      
 
 <img id="gestures-icon" src="./gestures-black.png" alt="Homepage">
 
@@ -97,11 +77,11 @@
     <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
     <p>ARTIRILMIŞ GERÇEKLİK</p> </div>
 
-    <div id="ar-open-android-div" onclick="myFunctionAROpen()" class="ar-open-android-div">
+    <div id="ar-open-android-div" onclick="myFunctionAROpenAndroid()" class="ar-open-android-div">
     <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
     <p>ARTIRILMIŞ GERÇEKLİK-A</p> </div>
 
-    <div id="ar-open-ios-div" onclick="myFunctionAROpen()" class="ar-open-ios-div">
+    <div id="ar-open-ios-div" onclick="myFunctionAROpenios()" class="ar-open-ios-div">
     <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
     <p>ARTIRILMIŞ GERÇEKLİK-I</p> </div>
     
@@ -117,6 +97,30 @@
     <button id="viewer-close-icon" onclick="myFunctionViewerOff()">
         X
     </button>
+
+
+
+    <script>
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (userAgent.includes("HUAWEI")) {
+                document.getElementById("ar-open-android-div").style.display="none";
+                document.getElementById("ar-open-ios-div").style.display="none";
+
+            } else if (userAgent.includes("Android")) {
+                document.getElementById("ar-open-android-div").style.display="block";
+                document.getElementById("ar-open-ios-div").style.display="none";
+            
+            } else if (userAgent.includes("iPhone")) {
+                document.getElementById("ar-open-android-div").style.display="none";
+                document.getElementById("ar-open-ios-div").style.display="block";
+            
+            } else {
+          
+                document.getElementById("ar-open-android-div").style.display="none";
+                document.getElementById("ar-open-ios-div").style.display="none";
+            }
+        </script>      
     
 
 <script>
@@ -159,7 +163,7 @@ function myFunctionQRZoneOff() {
 } 
 
 
-function myFunctionAROpen() {
+function myFunctionAROpenAndroid() {
 
      document.getElementById("ar-open-android").click();
 }

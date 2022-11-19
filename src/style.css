@@ -441,8 +441,8 @@ top: 2% !important;
       #ar-icon2 {
         position: absolute;
       width: 6.5%;
-      margin-left:70%;
-      margin-top: 0.5%;
+      margin-left:15%;
+      margin-top: 30%;
 
       }
 
@@ -688,7 +688,7 @@ top: 2% !important;
                             .ar-open-ios-div p {
                               position:absolute;
                           
-                            margin-left: 30%;
+                            margin-left: 25%;
                             margin-top: 7%;
                             font-size: 2.5vw;
                             display: block;

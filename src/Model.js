@@ -6,17 +6,21 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("./vicco-4k.glb");
+  const { nodes, materials } = useGLTF("./vicco-2k-master.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
         
         geometry={nodes.baked_mesh.geometry}
         material={materials.texture_0}
+       
         
       />
     </group>
   );
 }
 
-useGLTF.preload("./vicco-4k.glb");
+useGLTF.preload("./vicco-2k-master.glb");
+
+
+

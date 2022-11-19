@@ -5,20 +5,24 @@ import { Suspense, useEffect, useRef } from 'react'
 import gsap from'gsap'
 import Model from './Model.js'
 import {button, useControls } from 'leva'
-import * as THREE from 'three'
+
 
 
 
 export default function Experience()
 {
 
+
     const {} = useControls({
-        clickMe:button(
+        
+        IşıklarıKapat:button (
             
             ()=>{
                 // circleRef.current.material.color = new THREE.Color('black')  
-                document.getElementById("root").style.backgroundColor = "white"
-              
+                document.getElementById("root").style.backgroundColor = "rgba(255, 255, 255, 0.917)"
+                document.getElementById("qr-zone-div").style.backgroundColor = "rgba(255, 255, 255, 0.947)"
+                document.getElementById("qr-zone-div").style.color = "black"
+                document.getElementById("gestures-icon").src = "./gestures-black.png"
 
                 cubeRef.current.visible=false
                 greenRef.current.visible=false
@@ -31,14 +35,20 @@ export default function Experience()
     })  
 
     
-    const {} = useControls({
-        click2Me:button(
-            ()=>{
-                
-                
-                document.getElementById("root").style.backgroundColor = "black"
+    const { } = useControls({
+        IşıklarıAç:button(
 
+           
+            ()=>{          
                 // circleRef.current.material.color = new THREE.Color('black') 
+                document.getElementById("root").style.backgroundColor = "rgba(0, 0, 0, 0.955)"
+                document.getElementById("qr-zone-div").style.backgroundColor = "rgba(0, 0, 0, 0.955)"
+                document.getElementById("qr-zone-div").style.color="white"
+                document.getElementById("gestures-icon").src = "./gestures-white.png"
+                
+                
+                
+
                 cubeRef.current.visible=true
                 greenRef.current.visible=true
                 blueRef.current.visible=true
@@ -47,6 +57,7 @@ export default function Experience()
         
              
             }
+           
                     )
     }) 
 
@@ -58,7 +69,16 @@ export default function Experience()
     const greenRef2 = useRef(null)
     const circleRef = useRef(null)
     
-   
+    useEffect (()=>{
+        if(!!cubeRef.current){
+            cubeRef.current.visible=false
+            greenRef.current.visible=false
+            blueRef.current.visible=false
+            cubeRef2.current.visible=false
+            greenRef2.current.visible=false
+        }
+
+    },[cubeRef.current])
 
     useEffect (()=>{
         if(!!cubeRef.current){
@@ -77,12 +97,11 @@ export default function Experience()
         if(!!greenRef.current){
             gsap.to(greenRef.current.position,{
                 ease:"none",
-                duration:0.025,
-                delay:0.1,
+                duration:0.5,
+                delay:0.025,
                 repeat:-1,
                 x:-0.15,
                 y:0.17
-             
             })
         }
 
@@ -137,7 +156,7 @@ export default function Experience()
     
     return <>
 
-       
+
         
 
         <EffectComposer>
@@ -187,6 +206,10 @@ export default function Experience()
             <meshBasicMaterial color={[50,50,50]} toneMapped={false} />
         </mesh>
 
+
+
+   
+
         <mesh ref={circleRef} position-y={ 0} rotation-x={ - Math.PI * 0.5 } scale={ 2 } >
             
         <circleGeometry  args={[1,64]} />
@@ -209,9 +232,9 @@ export default function Experience()
         </Suspense>
 
         
-        
+     
 
     </>
 
- 
+
 }

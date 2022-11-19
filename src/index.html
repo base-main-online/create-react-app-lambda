@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASE - 3D Viewer - Vicco Demo</title>
+</head>
+
+<body>
+
+
+   <div class="root-back" id="root-back" onclick="myFunctionViewerOn()" 
+        style="background-image: url('./vicco/pc.png')">
+    asd
+   </div>
+
+   <div class="root-back-mobile" id="root-back-mobile" onclick="myFunctionViewerOn()" 
+   style="background-image: url('./vicco/mobile.png')">
+asd
+</div>
+
+
+    <div id="root">
+
+       
+    </div>
+
+
+
+
+    <script>
+
+        var x = window.matchMedia("(max-width: 600px)")
+        
+        
+        if(x.matches){
+          
+         document.getElementById("root-back").style.display="none"
+         document.getElementById("root-back-mobile").style.display="block"
+       
+        }
+        
+        
+    </script>
+        
+        
+
+<img id="gestures-icon" src="./gestures-black.png" alt="Homepage">
+
+
+<div class="qr-zone-div" id="qr-zone-div">
+
+    <img id="qr-image"  class="qr-image" src="./qr.png" alt="Homepage">
+
+    <p>Ürünü "Artırılmış Gerçeklik (AR)" teknolojisi ile görüntülemek için mobil cihazınıza geçip AR butonuna basın!</p>
+
+    <button id="qr-zone-close-icon" onclick="myFunctionQRZoneOff()">
+        X
+    </button>
+
+</div>
+
+
+    <div id="light-on-div" onclick="myFunctionLightOn()"class="light-on-div">
+    <img id="ar-icon" src="./vicco/light-icon.png" alt="Homepage">
+    <p>IŞIKLARI YAK</p> </div>
+
+    <div id="light-off-div" onclick="myFunctionLightOff()"class="light-off-div">
+    <img id="ar-icon" src="./vicco/light-icon.png" alt="Homepage">
+    <p>IŞIKLARI KAPAT</p> </div>
+    
+    <div id="qr-on-div" onclick="myFunctionQRZoneOn()" class="qr-on-div">
+    <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
+    <p>ARTIRILMIŞ GERÇEKLİK</p> </div>
+
+
+    <button id="viewer-close-icon" onclick="myFunctionViewerOff()">
+        X
+    </button>
+    
+
+<script>
+
+function myFunctionLightOn() {
+    document.getElementById("light-on-div").style.display="none";
+    document.getElementById("light-off-div").style.display="flex";
+
+    document.getElementsByClassName('leva-c-ihqPFh')[1].click();
+}
+
+
+function myFunctionLightOff() {
+    document.getElementById("light-off-div").style.display="none";
+    document.getElementById("light-on-div").style.display="flex";
+    
+    document.getElementsByClassName('leva-c-ihqPFh')[0].click();
+}
+
+
+function myFunctionViewerOn() {
+      document.getElementById("root-back").style.zIndex="-1";
+      document.getElementById("root-back-mobile").style.zIndex="-1";
+
+
+}
+
+function myFunctionViewerOff() {
+      document.getElementById("root-back").style.zIndex="999";
+      document.getElementById("root-back-mobile").style.zIndex="998";
+
+} 
+
+function myFunctionQRZoneOn() {
+      document.getElementById("qr-zone-div").style.display="block";
+      document.getElementById("root").style.display="none";
+} 
+
+function myFunctionQRZoneOff() {
+      document.getElementById("qr-zone-div").style.display="none";
+      document.getElementById("root").style.display="block";
+} 
+
+
+</script>
+
+
+    
+</body>
+</html>

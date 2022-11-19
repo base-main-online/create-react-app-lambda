@@ -4,13 +4,170 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>50 - Post-processing with R3F</title>
+    <title>BASE - 3D Viewer - Vicco Demo</title>
 </head>
 
 <body>
-   
+
+
+
+
+
+   <div class="root-back" id="root-back" onclick="myFunctionViewerOn()" 
+        style="background-image: url('./vicco/pc.png')">
+
+   </div>
+
+   <div class="root-back-mobile" id="root-back-mobile" onclick="myFunctionViewerOn()" 
+   style="background-image: url('./vicco/mobile.png')">
+
+</div>
+
+
     <div id="root">
+
        
     </div>
+
+
+
+
+    <script>
+
+        var x = window.matchMedia("(max-width: 600px)")
+        
+        
+        if(x.matches){
+          
+         document.getElementById("root-back").style.display="none"
+         document.getElementById("root-back-mobile").style.display="block"
+       
+        }
+        
+        
+    </script>
+        
+        <script>
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                if (userAgent.includes("HUAWEI")) {
+                    document.getElementById("ar-open-android-div").style.display="none";
+                    document.getElementById("ar-open-ios-div").style.display="none";
+
+                } else if (userAgent.includes("Android")) {
+                    document.getElementById("ar-open-android-div").style.display="block";
+                    document.getElementById("ar-open-ios-div").style.display="none";
+                
+                } else if (userAgent.includes("iPhone")) {
+                    document.getElementById("ar-open-android-div").style.display="none";
+                    document.getElementById("ar-open-ios-div").style.display="block";
+                
+                } else {
+              
+                    document.getElementById("ar-open-android-div").style.display="none";
+                    document.getElementById("ar-open-ios-div").style.display="none";
+                }
+            </script>      
+
+<img id="gestures-icon" src="./gestures-black.png" alt="Homepage">
+
+
+<div class="qr-zone-div" id="qr-zone-div">
+
+    <img id="qr-image"  class="qr-image" src="./qr.png" alt="Homepage">
+
+    <p>Ürünü "Artırılmış Gerçeklik (AR)" teknolojisi ile görüntülemek için mobil cihazınıza geçip AR butonuna basın!</p>
+
+    <button id="qr-zone-close-icon" onclick="myFunctionQRZoneOff()">
+        X
+    </button>
+
+</div>
+
+
+    <div id="light-on-div" onclick="myFunctionLightOn()"class="light-on-div">
+    <img id="ar-icon" src="./vicco/light-icon.png" alt="Homepage">
+    <p>IŞIKLARI YAK</p> </div>
+
+    <div id="light-off-div" onclick="myFunctionLightOff()"class="light-off-div">
+    <img id="ar-icon" src="./vicco/light-icon.png" alt="Homepage">
+    <p>IŞIKLARI KAPAT</p> </div>
+    
+    <div id="qr-on-div" onclick="myFunctionQRZoneOn()" class="qr-on-div">
+    <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
+    <p>ARTIRILMIŞ GERÇEKLİK</p> </div>
+
+    <div id="ar-open-android-div" onclick="myFunctionAROpen()" class="ar-open-android-div">
+    <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
+    <p>ARTIRILMIŞ GERÇEKLİK-A</p> </div>
+
+    <div id="ar-open-ios-div" onclick="myFunctionAROpen()" class="ar-open-ios-div">
+    <img id="ar-icon2" src="./vicco/AR-icon-beyaz.png" alt="Homepage">
+    <p>ARTIRILMIŞ GERÇEKLİK-I</p> </div>
+    
+    
+
+
+
+
+    
+    <a id="ar-open-android" href="intent://arvr.google.com/scene-viewer/1.0?file=https://vicco.basebros.com/public/vicco-2k-master&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">AR Android</a>;
+
+
+    <button id="viewer-close-icon" onclick="myFunctionViewerOff()">
+        X
+    </button>
+    
+
+<script>
+
+function myFunctionLightOn() {
+    document.getElementById("light-on-div").style.display="none";
+    document.getElementById("light-off-div").style.display="flex";
+    document.getElementsByClassName('leva-c-ihqPFh')[1].click();
+}
+
+
+function myFunctionLightOff() {
+    document.getElementById("light-off-div").style.display="none";
+    document.getElementById("light-on-div").style.display="flex";
+    document.getElementsByClassName('leva-c-ihqPFh')[0].click();
+}
+
+
+function myFunctionViewerOn() {
+      document.getElementById("root-back").style.zIndex="-1";
+      document.getElementById("root-back-mobile").style.zIndex="-1";
+
+
+}
+
+function myFunctionViewerOff() {
+      document.getElementById("root-back").style.zIndex="999";
+      document.getElementById("root-back-mobile").style.zIndex="998";
+
+} 
+
+function myFunctionQRZoneOn() {
+      document.getElementById("qr-zone-div").style.display="block";
+      document.getElementById("root").style.display="none";
+} 
+
+function myFunctionQRZoneOff() {
+      document.getElementById("qr-zone-div").style.display="none";
+      document.getElementById("root").style.display="block";
+} 
+
+
+function myFunctionAROpen() {
+
+     document.getElementById("ar-open-android").click();
+}
+
+
+</script>
+
+
+    
 </body>
 </html>
